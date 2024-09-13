@@ -5,7 +5,10 @@ import React from 'react'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router'
 const index = () => {
+
+    const router = useRouter()
     return (
         <View className="flex-1 flex justify-end">
             <StatusBar style='light' />
@@ -30,6 +33,7 @@ const index = () => {
 
                 <Animated.View entering={FadeInDown.delay(250).springify()}>
                     <TouchableOpacity
+                        onPress={() => router.push('home')}
                         style={{ height: hp(7), width: wp(80) }}
                         className="bg-rose-500 flex mx-auto rounded-full justify-center items-center shadow-lg"
                         activeOpacity={0.8}  // Press effect

@@ -7,7 +7,12 @@ const _layout = () => {
             screenOptions={{
                 headerShown: false
             }}
-        />
+        >
+            <Stack.Screen name='excercises' options={{
+                presentation: 'fullScreenModal'
+            }} />
+
+        </Stack>
     )
 }
 
